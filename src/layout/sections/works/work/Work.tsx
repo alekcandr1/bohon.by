@@ -10,7 +10,7 @@ type WorkPropsType = {
     info: Array<string>
     href: string
     textLink: string
-    iconSrc?: string
+    iconSrc?: string 
 }
 
 export const Work = (props: WorkPropsType) => {
