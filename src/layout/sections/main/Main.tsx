@@ -20,7 +20,8 @@ export const Main = () => {
                     </div>
                     <div>
                         <Button TextButton="Let’s Talk" />
-                        <a href="#">View skills</a>
+                        <Button TextButton="View skills" />
+                        {/* <a href="#">View skills</a> */}
                     </div>
                 </div>
 

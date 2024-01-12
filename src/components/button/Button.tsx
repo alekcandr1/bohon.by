@@ -16,5 +16,9 @@ export const Button = (props: ButtonProps) => {
 
 const StyledButton = styled.a`
     display: inline-block;
-    padding: 10px;
+    padding: 16px 40px;
+    border-radius: 100px;
+    background: var(--One, #FDA720);
 `
+
+

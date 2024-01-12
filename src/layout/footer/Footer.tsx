@@ -16,7 +16,7 @@ export const Footer = () => {
                 <Menu menuItems={headerMenu} />
                 <Social />
                 <Hr />
-                <Copyright>© Copyright 2023 Bohon.by | All rights reserved</Copyright>
+                <Copyright>© Copyright 2024 Bohon.by | All rights reserved</Copyright>
             </FlexWrapper>
         </StyledFooter>
             
