@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { theme } from "../styles/Theme";
 
 type TitlesProps = {
     align?: string
@@ -24,8 +25,17 @@ const StyledSectionTitle = styled.div<{ align?: string }>`
     margin-bottom: 30px;
 `
 const SectionTitle1 = styled.p`
-
+    color: ${theme.colors.Two};
+    font-size: 1.25rem;
+    font-weight: 600;
 `
 const SectionTitle2 = styled.h2`
+    background: ${theme.liners.h2.background};
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.9rem;
+    font-weight: 700;
+    padding: 7px;
 
 `
