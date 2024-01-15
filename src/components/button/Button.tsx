@@ -8,13 +8,38 @@ type ButtonProps = {
     bgHover?: string
     color?: string
     decoration?: string
+    idForm?: string
+    w?: string
 }
 
+
 export const Button = (props: ButtonProps) => {
-    return (
-        <StyledButton href="#" bg={props.bg} bgHover={props.bgHover} color={props.color} decoration={props.decoration}>
-            {props.TextButton || "Button"}
+
+    return props.idForm ? (
+        <StyledButton
+            as="button"
+            type="submit"
+            bg={props.bg}
+            bgHover={props.bgHover}
+            color={props.color}
+            w={props.w}
+            decoration={props.decoration}>
+
+                {props.TextButton || "Button"}
         </StyledButton>
+    ) : (
+        <StyledButton
+            as="a"
+            href="#"
+            w={props.w}
+            bg={props.bg}
+            bgHover={props.bgHover}
+            color={props.color}
+            decoration={props.decoration}>
+
+                {props.TextButton || "Button"}
+        </StyledButton>
+
     );
 };
 
@@ -24,6 +49,8 @@ const StyledButton = styled.a<ButtonProps>`
     padding: 16px 40px;
     width: max-content;
     border-radius: 100px;
+
+    width: ${props => props.w};
     
     transition: background-color 0.3s ease;
     font-size: 1.05rem;

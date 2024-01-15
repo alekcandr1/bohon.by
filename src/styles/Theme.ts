@@ -9,6 +9,7 @@ export const theme = {
         text: "#444E67",
         white: "#FFF",
         gray: "#6F6F6F",
+        placeholder: "#858585",
         darkTitle: "#3F396D",
         borderLine: "rgba(112, 52, 254, 0.15)",
 
