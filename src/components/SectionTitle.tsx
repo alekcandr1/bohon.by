@@ -6,13 +6,15 @@ type TitlesProps = {
     align?: string
     Title1?: string
     Title2?: string
+    colorTitle1?: string
+    colorTitle2?: string
 }
 
 export const SectionTitle = (props: TitlesProps) => {
     return (
         <StyledSectionTitle align={props.align}>
-            <SectionTitle1>{props.Title1 || "Title 1"}</SectionTitle1>
-            <SectionTitle2>{props.Title2 || "Title 2"}</SectionTitle2>
+            <SectionTitle1 colorTitle1={props.colorTitle1}>{props.Title1 || "Title 1"}</SectionTitle1>
+            <SectionTitle2 colorTitle2={props.colorTitle2}>{props.Title2 || "Title 2"}</SectionTitle2>
         </StyledSectionTitle>
     );
 };
@@ -24,18 +26,18 @@ const StyledSectionTitle = styled.div<{ align?: string }>`
     align-self: stretch;
     margin-bottom: 30px;
 `
-const SectionTitle1 = styled.p`
-    color: ${theme.colors.Two};
+const SectionTitle1 = styled.p<TitlesProps>`
+    color: ${props => props.colorTitle1 || theme.colors.Two};
     font-size: 1.25rem;
     font-weight: 600;
 `
-const SectionTitle2 = styled.h2`
-    background: ${theme.liners.h2.background};
+const SectionTitle2 = styled.h2<TitlesProps>`
+    background: ${props => props.colorTitle2 || theme.liners.h2.background};
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2.9rem;
     font-weight: 700;
-    padding: 7px;
+    padding: 0 0 7px 0;
 
 `

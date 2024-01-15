@@ -5,6 +5,9 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Work } from "./work/Work";
 
 import Image1 from './../../../assets/images/pr1.jpg';
+import { Container } from "../../../components/Container";
+import { theme } from "../../../styles/Theme";
+import { Description } from "../../../components/Description";
 
 const allWorks = [
     {
@@ -96,31 +99,53 @@ const allWorks = [
 export const Works = () => {
     return (
         <StyledWorks>
-            <SectionTitle Title1="My works" Title2="Projects" />
-            <FlexWrapper wrap="wrap" justify="center">
+            <Container>
+                <SectionTitle Title1="My works" Title2="Projects" colorTitle1="#fff" colorTitle2="#fff" />
+                <Description color="#fff" text="My experience consists of developing more than 30 commercial websites: online stores, one-page websites, corporate websites, information resources."></Description>
+                <Description color="#fff" text="These are often turnkey sites - from prototyping and design, to development, basic SEO and connecting CRM systems."></Description>
 
-                {allWorks.map((work, index) => {
-                    return <Work key={index}
-                    imageSrc={work.image} 
-                    type={work.type}
-                    name={work.name} 
-                    info={work.info} 
-                    href={work.href} 
-                    textLink={work.href} />
-                })}
+                <FlexWrapper wrap="wrap" justify="center" padding="30px 0 0 0">
 
-            </FlexWrapper>
+                    {allWorks.map((work, index) => {
+                        return <Work key={index}
+                            imageSrc={work.image}
+                            type={work.type}
+                            name={work.name}
+                            info={work.info}
+                            href={work.href}
+                            textLink={work.href} />
+                    })}
+
+                </FlexWrapper>
+
+            </Container>
         </StyledWorks>
     );
 };
 
 const StyledWorks = styled.section`
-display:flex;
-justify-content: center;
-flex-direction: column;
-background-color: #fff7f7;
-min-height: 80vh;
-gap: 50px;
-min-height: 80vh;
-padding-top: 20px;
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: ${theme.colors.white};
+    min-height: 80vh;
+    gap: 50px;
+    min-height: 80vh;
+    padding-top: 100px;
+
+&::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    background-color: ${theme.colors.blueBg};
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+}
+
 `

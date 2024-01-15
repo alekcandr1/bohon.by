@@ -21,7 +21,7 @@ color: ${props => props.color || theme.colors.text};
 width: ${props => props.w || "60%"};
 
 margin: 0 auto;
-padding-bottom: 50px;
+padding-bottom: 30px;
 text-align: center;
 font-size: 1.3rem;
 font-weight: 400;

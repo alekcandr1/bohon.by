@@ -38,7 +38,7 @@ const StyledWork = styled.div`
     justify-content: center;
     gap: 40px;
     margin-bottom: 40px;
-
+    background: #fff;
 `
 const Image = styled.img`
    

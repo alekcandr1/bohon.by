@@ -39,11 +39,11 @@ const StyledButton = styled.a<ButtonProps>`
 
     }
 
-    &:focus {
+    /* &:focus {
         border:0;
         outline: none;
 
-    }
+    } */
 
 `
 

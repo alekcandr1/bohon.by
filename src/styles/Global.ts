@@ -13,6 +13,8 @@ html,
 body {
   font-size: 16px;
   font-weight: 400;
+  line-height: normal;
+
 }
 
 body {
