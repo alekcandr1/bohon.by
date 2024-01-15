@@ -8,13 +8,17 @@ type TitlesProps = {
     Title2?: string
     colorTitle1?: string
     colorTitle2?: string
+    Title2Line2?: string
 }
 
 export const SectionTitle = (props: TitlesProps) => {
     return (
         <StyledSectionTitle align={props.align}>
             <SectionTitle1 colorTitle1={props.colorTitle1}>{props.Title1 || "Title 1"}</SectionTitle1>
-            <SectionTitle2 colorTitle2={props.colorTitle2}>{props.Title2 || "Title 2"}</SectionTitle2>
+            <SectionTitle2 colorTitle2={props.colorTitle2}>
+                {props.Title2 || "Title 2"}
+                {props.Title2Line2 ? <><br />{props.Title2Line2}</> : null}
+            </SectionTitle2>
         </StyledSectionTitle>
     );
 };

@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import QuotesImg from '../../assets/images/quotes.webp'
 import { Pagination } from "../pagination/Pagination";
+import { theme } from "../../styles/Theme";
+import { FlexWrapper } from "../FlexWrapper";
 
 
 export const Slider = () => {
@@ -14,16 +16,19 @@ export const Slider = () => {
                     <TextTestimony>
                         Testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text testimonial text.
                     </TextTestimony>
-                    <Name>
-                        Alexandr Bokhan
-                    </Name>
-                    <Post>
-                        CEO of company
-                    </Post>
+                    <FlexWrapper direction="column" gap="5px">
+                        <Name>
+                            Alexandr Bokhan
+                        </Name>
+                        <Post>
+                            CEO of company
+                        </Post>
+
+                    </FlexWrapper>
                 </Slide>
                 <Pagination />
             </Testimony>
-            
+
         </StyledSlider>
     );
 };
@@ -34,13 +39,14 @@ const StyledSlider = styled.div`
 
 `
 const Quotes = styled.img`
-    width: 37px;
     height: 38px;
+    padding-right: 15px;
+
 `
 const Testimony = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 
 
 `
@@ -51,13 +57,21 @@ const Slide = styled.div`
 
 `
 const TextTestimony = styled.p`
+color: ${theme.colors.gray};
+font-size: 20px;
+font-weight: 400;
+line-height: 150%;
 
 `
 const Name = styled.span`
+color: ${theme.colors.darkTitle};
+font-size: 1.3rem;
+font-weight: 700;
 
 `
 const Post = styled.span`
-
+    color: ${theme.colors.gray};
+    font-size: 1.1rem;
 `
 
 

@@ -4,6 +4,7 @@ import { FlexWrapper } from "../../components/FlexWrapper";
 import LogoImg from '../../assets/images/logo2.png'
 import { Menu } from "../../components/menu/Menu";
 import { Social } from "../../components/social/Social";
+import { Container } from "../../components/Container";
 
 const headerMenu = ["Home", "Skills", "Projects", "Testimonials", "Contacts"]
 
@@ -11,13 +12,15 @@ const headerMenu = ["Home", "Skills", "Projects", "Testimonials", "Contacts"]
 export const Footer = () => {
     return (
         <StyledFooter>
-            <FlexWrapper direction="column" align="center" gap="30px">
-                <Logo src={LogoImg} />
-                <Menu menuItems={headerMenu} />
-                <Social />
-                <Hr />
-                <Copyright>© Copyright 2024 Bohon.by | All rights reserved</Copyright>
-            </FlexWrapper>
+            <Container>
+                <FlexWrapper direction="column" align="center" gap="30px">
+                    <Logo src={LogoImg} />
+                    <Menu menuItems={headerMenu} />
+                    <Social />
+                    <Hr />
+                    <Copyright>© Copyright 2024 Bohon.by | All rights reserved</Copyright>
+                </FlexWrapper>
+            </Container>
         </StyledFooter>
             
     );
@@ -28,7 +31,7 @@ const StyledFooter = styled.footer`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 0;
+    padding: 40px 0;
     background-color: #211E39;
 
     a {

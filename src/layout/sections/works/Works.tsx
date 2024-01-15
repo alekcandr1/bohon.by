@@ -107,10 +107,31 @@ export const Works = () => {
                 <FlexWrapper wrap="wrap" gap="20px" row-gap="20px" justify="center" padding="30px 0 0 0">
 
                     {allWorks.map((work, index) => {
+                        // const InfoList = () => {
+                        //     return (
+                        //         <ul>
+                        //             {work.info.map((item, index) => (
+                        //                 <li key={index}>{item}</li>
+                        //             ))}
+                        //         </ul>
+                        //     );
+                        // };
+
                         return <Work key={index}
                             imageSrc={work.image}
                             type={work.type}
                             name={work.name}
+                            
+                            // info={<InfoList />}
+                            // info={() => {
+                            //     return (
+                            //                 <ul>
+                            //                     {work.info.map((item, index) => (
+                            //                         <li key={index}>{item}</li>
+                            //                     ))}
+                            //                 </ul>
+                            //             );
+                            // }}
                             info={work.info}
                             href={work.href}
                             textLink={work.href} />
