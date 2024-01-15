@@ -104,7 +104,7 @@ export const Works = () => {
                 <Description color="#fff" text="My experience consists of developing more than 30 commercial websites: online stores, one-page websites, corporate websites, information resources."></Description>
                 <Description color="#fff" text="These are often turnkey sites - from prototyping and design, to development, basic SEO and connecting CRM systems."></Description>
 
-                <FlexWrapper wrap="wrap" justify="center" padding="30px 0 0 0">
+                <FlexWrapper wrap="wrap" gap="20px" row-gap="20px" justify="center" padding="30px 0 0 0">
 
                     {allWorks.map((work, index) => {
                         return <Work key={index}
@@ -130,9 +130,10 @@ const StyledWorks = styled.section`
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 20px;
+
+    
     background-color: ${theme.colors.white};
-    min-height: 80vh;
-    gap: 50px;
     min-height: 80vh;
     padding-top: 100px;
 

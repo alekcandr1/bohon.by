@@ -8,6 +8,8 @@ export const theme = {
         Two: "#7034FE",
         text: "#444E67",
         white: "#FFF",
+        darkTitle: "#3F396D",
+        borderLine: "rgba(112, 52, 254, 0.15)",
 
     },
 

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Icon from '../../../../assets/images/open-site.png'
+import { theme } from "../../../../styles/Theme";
 
 
 type WorkPropsType = {
@@ -33,14 +34,19 @@ export const Work = (props: WorkPropsType) => {
 const StyledWork = styled.div`
     display: flex;
     flex-direction: row;
-    width: 50%;
-    width: 591px;
     justify-content: center;
     gap: 40px;
-    margin-bottom: 40px;
+
+    width: 49%;
+    min-width: min-content;
     background: #fff;
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid ${theme.colors.borderLine};
+    box-shadow: 0px 0px 80px 0px rgba(167, 154, 197, 0.20);
 `
 const Image = styled.img`
+    max-height: 356px;
    
 
 `
@@ -52,19 +58,31 @@ const Description = styled.div`
 
 `
 const TypeWork = styled.h3`
+    color: ${theme.colors.blueBg};
+    font-size: 1rem;
+    font-weight: 500;
    
 
 `
 const NameWork = styled.span`
+    color: ${theme.colors.darkTitle};
+    font-size: 1.4rem;
+    font-weight: 700;
    
 
 `
 const InfoItems = styled.ul`
-   
+   padding: 20px 0;
 
 `
 const Link = styled.a`
-   
-
+    position: relative;
+    color: ${theme.colors.One};
+    
+    img {
+        padding-left: 5px;
+        position: absolute;
+        top: 3px;
+    }
 `
 
