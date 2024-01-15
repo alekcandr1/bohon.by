@@ -24,6 +24,7 @@ const StyledButton = styled.a<ButtonProps>`
     padding: 16px 40px;
     width: max-content;
     border-radius: 100px;
+    
     transition: background-color 0.3s ease;
     font-size: 1.05rem;
 
@@ -35,6 +36,12 @@ const StyledButton = styled.a<ButtonProps>`
     &:hover {
         background: ${props => props.bgHover || theme.colors.Two};
         text-decoration: none;
+
+    }
+
+    &:focus {
+        border:0;
+        outline: none;
 
     }
 
