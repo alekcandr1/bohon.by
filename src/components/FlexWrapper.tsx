@@ -10,6 +10,8 @@ type FlexWrapperPropsType = {
     gap?: string
     row?: string
     padding?: string
+    w?: string
+    self?: string
 }
 
 export const FlexWrapper = styled.div<FlexWrapperPropsType>`
@@ -21,6 +23,8 @@ flex-wrap: ${props => props.wrap || "nowrap"};
 gap: ${props => props.gap};
 row-gap: ${props => props.row};
 padding: ${props => props.padding || "0"};
+width: ${props => props.w || ""};
+align-self: ${props => props.self || ""};
 
 height: 100%;
 

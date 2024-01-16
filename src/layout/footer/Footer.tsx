@@ -5,6 +5,7 @@ import LogoImg from '../../assets/images/logo2.png'
 import { Menu } from "../../components/menu/Menu";
 import { Social } from "../../components/social/Social";
 import { Container } from "../../components/Container";
+import { theme } from "../../styles/Theme";
 
 const headerMenu = ["Home", "Skills", "Projects", "Testimonials", "Contacts"]
 
@@ -18,7 +19,7 @@ export const Footer = () => {
                     <Menu menuItems={headerMenu} />
                     <Social />
                     <Hr />
-                    <Copyright>© Copyright 2024 Bohon.by | All rights reserved</Copyright>
+                    <Copyright>© Copyright {new Date().getFullYear()} Bohon.by | All rights reserved</Copyright>
                 </FlexWrapper>
             </Container>
         </StyledFooter>
@@ -36,7 +37,7 @@ const StyledFooter = styled.footer`
 
     a {
         text-decoration: none;
-        color: #9692A1;
+        color: ${theme.colors.gray};
     }
 `
 const Logo = styled.img`
@@ -44,13 +45,15 @@ const Logo = styled.img`
 `
 
 const Hr = styled.hr`
- width: 80%;
- border: 0;
- border-bottom: 1px solid #9692a155;
+    margin-top: 20px;
+    width: 80%;
+    border: 0;
+    border-bottom: 1px solid #9692a155;
 `
 
 const Copyright = styled.small`
-    color: #9692A1;
+    color: ${theme.colors.gray};
+    font-size: 0.9rem;
 `
 
 

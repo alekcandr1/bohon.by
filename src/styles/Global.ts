@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { theme } from "./Theme";
 
 export const GlobalStyle = createGlobalStyle`
 *,
@@ -7,6 +8,18 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  font-family: 'Exo 2', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: ${theme.colors.placeholder};
+}
+button {
+  font-family: 'Exo 2', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 html,
@@ -19,9 +32,7 @@ body {
 
 body {
     margin: 0;
-    font-family: 'Exo 2', 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+    font-family: 'Exo 2', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: "";
