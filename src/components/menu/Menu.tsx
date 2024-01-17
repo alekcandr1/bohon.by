@@ -2,15 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../../styles/Theme";
 
-export const Menu = (props: { menuItems: Array<string> }) => {
+type MenuPropsType = {
+    menuItems: Array<string>
+    line?: boolean
+}
+
+export const Menu = (props: MenuPropsType) => {
     return (
         <StyledMenu>
-            <MenuItems>
+            <MenuItems line={props.line ? props.line : false}>
                 <ul>
                     {props.menuItems.map((item, index) => {
-                        return <ListItem key={index}>
+                       return <React.Fragment key={index}>
+                        <ListItem key={index}>
+                            {index > 0 && props.line && <Line />}
                             <Link href="">{item}</Link>
+                            
                         </ListItem>
+                        </React.Fragment>
                     })}
                 </ul>
             </MenuItems>
@@ -27,12 +36,12 @@ const StyledMenu = styled.div`
 
 `
 
-const MenuItems = styled.nav`
+const MenuItems = styled.nav<{line: boolean}>`
     height: 100%;
 
     ul {
         display: flex;
-        gap: 60px;
+        gap: ${props => props.line ? "30px" : "60px"};
         height: 100%;
     }
 `
@@ -41,6 +50,9 @@ const ListItem = styled.li`
     display: flex;
     align-items: center;
     height: 100%;
+    justify-content: space-between;
+    gap: 30px;
+
 `
 
 const Link = styled.a`
@@ -57,7 +69,13 @@ const Link = styled.a`
     &:hover {
         color: ${theme.colors.One};
     }
+`
 
+const Line = styled.span`
+    display: flex;
+    width: 1px;
+    height: 20px;
+    background-color: ${theme.colors.gray};
 
 `
 

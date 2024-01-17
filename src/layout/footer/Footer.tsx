@@ -16,7 +16,7 @@ export const Footer = () => {
             <Container>
                 <FlexWrapper direction="column" align="center" gap="30px">
                     <Logo src={LogoImg} />
-                    <Menu menuItems={headerMenu} />
+                    <Menu line={true} menuItems={headerMenu} />
                     <Social />
                     <Hr />
                     <Copyright>© Copyright {new Date().getFullYear()} Bohon.by | All rights reserved</Copyright>

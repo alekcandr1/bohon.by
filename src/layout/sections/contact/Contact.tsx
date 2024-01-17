@@ -14,7 +14,7 @@ export const Contact = () => {
                 <SectionTitle
                     Title1="Let’s Talk"
                     Title2="Any questions?"
-                    Title2Line2="Contact me"
+                    Title3="Contact me" 
                 />
                 <FlexWrapper direction="column" gap="30px">
                     <Contacts>
