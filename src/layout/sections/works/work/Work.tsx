@@ -95,7 +95,7 @@ const NameWork = styled.span`
 
 `
 const InfoItems = styled.li`
-   padding: 20px 0;
+   padding: 0px 0;
 
 `
 const Link = styled.a`
