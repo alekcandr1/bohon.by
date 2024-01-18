@@ -39,6 +39,6 @@ const Image = styled.img`
 
 `
 const ContentTestimonials = styled.div`
-    min-width: 787px;
+    min-width: 550px;
 
 `

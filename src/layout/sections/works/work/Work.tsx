@@ -11,7 +11,7 @@ type WorkPropsType = {
     info: Array<string>
     href: string
     textLink: string
-    iconSrc?: string 
+    iconSrc?: string
 }
 
 export const Work = (props: WorkPropsType) => {
@@ -24,11 +24,12 @@ export const Work = (props: WorkPropsType) => {
             <Description>
                 <TypeWork>{props.type}</TypeWork>
                 <NameWork>{props.name}</NameWork>
-                <ul>
-                {props.info && props.info.map(el=>{
-                    return <InfoItems>{el}</InfoItems>
-                })}
-                </ul>
+                <UlElementInfoItems>
+                    {props.info && props.info.map((el, index) => {
+                        return <InfoItems key={index}>{el}</InfoItems>
+                    })}
+
+                </UlElementInfoItems>
                 <Link href={props.href}>
                     <span>{props.textLink}</span>
                     <img src={props.iconSrc || Icon} alt="Open" />
@@ -45,7 +46,8 @@ const StyledWork = styled.div`
     gap: 40px;
 
     width: 49%;
-    min-width: min-content;
+    min-width: 612px;
+    
     background: #fff;
     padding: 40px;
     border-radius: 30px;
@@ -94,8 +96,20 @@ const NameWork = styled.span`
    
 
 `
+
+const UlElementInfoItems = styled.ul`
+    padding: 20px 0 20px 10px;
+`
+
 const InfoItems = styled.li`
-   padding: 0px 0;
+   padding: 2px 0;
+
+   &::before {
+      content: '•'; /* Unicode character for a bullet point */
+      color: ${theme.colors.blueBg}; /* Customize the color */
+      display: inline-block;
+      width: 1em;
+   }
 
 `
 const Link = styled.a`

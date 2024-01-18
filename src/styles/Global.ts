@@ -8,6 +8,12 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    /* user-select: none; */
+
+    &::selection {
+      color: #000;
+    }
 }
 
 ::placeholder {
@@ -27,6 +33,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: normal;
+  min-width: 300px;
 
 }
 
