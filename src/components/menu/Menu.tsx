@@ -6,11 +6,10 @@ type MenuPropsType = {
     menuItems: Array<string>
     line?: boolean
 }
-
+ 
 export const Menu = (props: MenuPropsType) => {
     return (
-        <StyledMenu>
-            <MenuItems line={props.line ? props.line : false}>
+        <StyledMenu line={props.line ? props.line : false}>
                 <ul>
                     {props.menuItems.map((item, index) => {
                        return <React.Fragment key={index}>
@@ -22,28 +21,25 @@ export const Menu = (props: MenuPropsType) => {
                         </React.Fragment>
                     })}
                 </ul>
-            </MenuItems>
-
         </StyledMenu>
     );
 };
 
-const StyledMenu = styled.div`
+const StyledMenu = styled.nav<{line: boolean}>`
     display: flex;
-    gap: 60px;
     align-items: center;
     height: 100%;
 
-`
-
-const MenuItems = styled.nav<{line: boolean}>`
-    height: 100%;
+    @media ${theme.media.tablet} {
+        display: none;
+    }
 
     ul {
         display: flex;
         gap: ${props => props.line ? "30px" : "60px"};
         height: 100%;
     }
+
 `
 
 const ListItem = styled.li`

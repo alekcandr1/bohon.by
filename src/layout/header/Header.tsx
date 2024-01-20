@@ -6,10 +6,11 @@ import { Button } from "../../components/button/Button";
 import { Container } from "../../components/Container";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { theme } from "../../styles/Theme";
+import { MobileMenu } from "../../components/menu/MobileMenu";
 
 const headerMenu = ["Home", "Skills", "Projects", "Testimonials", "Contacts"]
 
-export const Header = () => {
+export const Header = (props: { isMobile?: boolean }) => {
     return (
         <StyledHeader>
             <Container>
@@ -17,7 +18,10 @@ export const Header = () => {
                     <Logo />
                     <MenuWrapper>
                         <Menu menuItems={headerMenu} />
-                        <Button TextButton={"Contact me"} />
+                        <MobileMenu menuItems={headerMenu} />
+                        <ButtonWrapper>
+                            <Button TextButton={"Contact me"} />
+                        </ButtonWrapper>
                     </MenuWrapper>
                 </FlexWrapper>
             </Container>
@@ -32,7 +36,15 @@ const StyledHeader = styled.header`
 `
 const MenuWrapper = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
     gap: 60px;
     align-items: center;
+`
+
+const ButtonWrapper = styled.div`
+    display: block;
+
+    @media ${theme.media.tablet} {
+        display: none;
+    }
 `

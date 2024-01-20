@@ -23,7 +23,7 @@ export const Footer = () => {
                 </FlexWrapper>
             </Container>
         </StyledFooter>
-            
+
     );
 };
 
