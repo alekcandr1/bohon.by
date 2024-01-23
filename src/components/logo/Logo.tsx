@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import LogoImg from '../../assets/images/logo1.png'
+import { theme } from "../../styles/Theme";
 
 
 export const Logo = () => {
@@ -13,4 +14,10 @@ export const Logo = () => {
 
 
 const StyledLogo = styled.a`
+
+    @media ${theme.media.mobile} {
+        img {
+            height: 40px;
+        }
+    }
 `

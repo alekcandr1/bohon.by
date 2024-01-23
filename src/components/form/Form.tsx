@@ -7,12 +7,13 @@ export const Form = () => {
     return (
         <StyledForm id="myForm" action="main.php">
             <FirstColumn>
-                <Field type="text" placeholder={"Name"} />
-                <Field type="phone" placeholder={"Phone"} />
+                <Field type="text" placeholder={"Name"} required />
+                <Field type="phone" placeholder={"Phone"} required />
+                <Message1 placeholder="Message" required></Message1>
                 <Button idForm="myForm" TextButton="Send message" w="100%" />
             </FirstColumn>
             <SecondColumn>
-                <Message placeholder="Message"></Message>
+                <Message2 placeholder="Message"></Message2>
             </SecondColumn>
         </StyledForm>
     );
@@ -33,10 +34,18 @@ const FirstColumn = styled.div`
     flex-direction: column;
     width: 40%;
     gap: 20px;
+    @media ${theme.media.mobile} {
+        width: 100%;
+    }
+
     
 `
 const SecondColumn = styled.div`
     width: 60%;
+    @media ${theme.media.mobile} {
+        display: none;
+    }
+
     
 `
 const Field = styled.input`
@@ -53,7 +62,24 @@ const Field = styled.input`
     box-shadow: 0px 0px 40px 0px rgba(112, 52, 254, 0.10);
     
 `
-const Message = styled.textarea`
+const Message1 = styled.textarea`
+    display: none;
+    height: 200px;
+    width: 100%;
+
+    box-shadow: 0px 0px 40px 0px rgba(112, 52, 254, 0.10);
+    border-radius: 30px;
+    background: ${theme.colors.white};
+    padding: 18px 30px;
+    border: 0;
+    resize: none;
+
+    @media ${theme.media.mobile} {
+        display: block;
+    }
+`
+
+const Message2 = styled.textarea`
     height: 100%;
     width: 100%;
 
@@ -62,5 +88,5 @@ const Message = styled.textarea`
     background: ${theme.colors.white};
     padding: 18px 30px;
     border: 0;
-    resize: none
+    resize: none;
 `

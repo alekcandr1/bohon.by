@@ -75,6 +75,13 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
     right: -100px;
     z-index: 999999;
 
+    @media ${theme.media.mobile} {
+        top: -120px;
+        right: -110px;
+
+        
+    }
+
 
     span {
         display: block;
@@ -84,6 +91,11 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
         position: absolute;
         left: 40px;
         bottom: 50px;
+
+        @media ${theme.media.mobile} {
+            width: 31px;
+
+        }
 
         ${props => props.isOpen && css<{isOpen: boolean}>`
             background-color: rgba(255, 255, 255, 0);
@@ -97,10 +109,19 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
             background-color: ${theme.colors.text};
             position: absolute;
             transform: translateY(-10px);
+
+            @media ${theme.media.mobile} {
+                width: 31px;
+                transform: translateY(-8px);
+            }
             
             ${props => props.isOpen && css<{isOpen: boolean}>`
-            transform: rotate(-45deg) translateY(0px);
 
+                transform: rotate(-45deg) translateY(0px);
+                @media ${theme.media.mobile} {
+                            width: 31px;
+                            transform: rotate(-45deg) translateY(0px);
+                        }
             `}
 
             
@@ -115,10 +136,20 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
             right: 0;
             transform: translateY(10px);
 
-            ${props => props.isOpen && css<{isOpen: boolean}>`
-            transform: rotate(45deg) translateY(0px);
-            width: 36px;
+            @media ${theme.media.mobile} {
+                width: 18px;
+                transform: translateY(8px);
 
+            }
+
+            ${props => props.isOpen && css<{isOpen: boolean}>`
+
+                transform: rotate(45deg) translateY(0px);
+                width: 36px;
+                @media ${theme.media.mobile} {
+                    width: 31px;
+                    transform: rotate(45deg) translateY(0px);
+                }
 
             `}
 

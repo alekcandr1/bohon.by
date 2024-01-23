@@ -13,7 +13,7 @@ export const Skills = () => {
             <Container>
                 <SectionTitle Title1="What I'm good at" Title2="My skills" />
                 <Description text={"I am proficient in TypeScript, JavaScript, React, React Native, Redux-Toolkit, Material UI and Styled Components."} />
-                <FlexWrapper wrap="wrap" justify="center" gap="20px" padding="20px 0 0 0">
+                <FlexWrapper wrap="wrap" justify="center" gap="20px" padding="0px 0 0 0">
                     <StyledSkill>
                         <Icon iconId={"html"} />
                     </StyledSkill>
@@ -64,14 +64,15 @@ const StyledSkills = styled.section`
     background-color: ${theme.colors.secondaryBg};
     padding: 100px 0;
     @media ${theme.media.mobile} {
-        padding-top: 60px;
+        padding: 50px 0;
+
 
     }
 
 `
 
 const StyledSkill = styled.div`
-    width: 16.666%;
+    width: 14%;
     display: flex;
     justify-content: center;
     align-items: center;

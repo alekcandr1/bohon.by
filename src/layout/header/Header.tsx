@@ -15,7 +15,7 @@ export const Header = (props: { isMobile?: boolean }) => {
         <StyledHeader>
             <Container>
                 <FlexWrapper justify="space-between">
-                    <Logo /> 
+                    <Logo />
                     <MenuWrapper>
                         <Menu menuItems={headerMenu} />
                         <MobileMenu menuItems={headerMenu} />
@@ -33,6 +33,19 @@ export const Header = (props: { isMobile?: boolean }) => {
 const StyledHeader = styled.header`
     background-color: ${theme.colors.primeryBg};
     padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 999;
+    height: 94px;
+    @media ${theme.media.mobile} {
+        padding: 10px 0;
+
+            height: 60px;
+        
+    }
+
 `
 const MenuWrapper = styled.div`
     display: flex;

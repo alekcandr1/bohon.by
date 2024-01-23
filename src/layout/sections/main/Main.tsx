@@ -34,12 +34,19 @@ export const Main = () => {
 };
 
 const StyledMain = styled.div`
+    padding-top: 94px;
     background-color: ${theme.colors.primeryBg};
+    min-height: fit-content;
 
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+    }
     & > div > div {
         @media ${theme.media.tablet} {
             flex-direction: column-reverse;
-            gap: 40px;
+            gap: 50px;
 
             img {
                 width: 90%;

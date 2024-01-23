@@ -18,7 +18,7 @@ export const Contact = () => {
                 />
                 <FlexWrapper direction="column" gap="30px">
                     <Contacts>
-                        <span>+375 (29) 963-88-99</span>
+                        <a href="tel:+375299638899">+375 (29) 963-88-99</a>
                         <span>alekcandrmain@gmail.com</span>
                     </Contacts>
                     <Social />
@@ -35,6 +35,10 @@ const StyledContact = styled.div`
     background-color: ${theme.colors.primeryBg};
     text-align: center;
     padding: 80px 0;
+
+    @media ${theme.media.mobile} {
+        padding: 50px 0;    
+    }
 `
 const Contacts = styled.div`
     display: flex;
@@ -44,5 +48,13 @@ const Contacts = styled.div`
 
     color: ${theme.colors.darkTitle};
     text-align: center;
-    font-size: 1.2rem;
+    font-size: calc( (100vw - 360px)/(1920 - 360) * (20 - 16) + 16px);
+
+    @media ${theme.media.mobile} {
+        gap: 0px;
+    }
+
+    a {
+        color: ${theme.colors.darkTitle};
+    }
 `
