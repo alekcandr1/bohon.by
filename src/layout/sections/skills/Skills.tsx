@@ -24,19 +24,19 @@ export const Skills = () => {
                         <Icon iconId={"js"} />
                     </StyledSkill>
                     <StyledSkill>
-                        <Icon iconId={"react"} />
+                        <Icon iconId={"react"} width="120" height="120" viewBox="0 0 120 100" />
                     </StyledSkill>
                     <StyledSkill>
                         <Icon iconId={"redux"} />
                     </StyledSkill>
                     <StyledSkill>
-                        <Icon iconId={"bootstrap"} />
+                        <Icon iconId={"bootstrap"} width="100" height="100" viewBox="0 0 90 90" />
                     </StyledSkill>
                     <StyledSkill>
-                        <Icon iconId={"tailwind"} />
+                        <Icon iconId={"tailwind"} width="120" height="120" viewBox="0 0 130 130"  />
                     </StyledSkill>
                     <StyledSkill>
-                        <Icon iconId={"sass"} />
+                        <Icon iconId={"sass"} width="120" height="90" viewBox="0 0 130 90" />
                     </StyledSkill>
                     <StyledSkill>
                         <Icon iconId={"git"} />
@@ -48,7 +48,7 @@ export const Skills = () => {
                         <Icon iconId={"vscode"} />
                     </StyledSkill>
                     <StyledSkill>
-                        <Icon iconId={"github"} />
+                        <Icon iconId={"github"} width="110" height="110" viewBox="0 0 100 100" />
                     </StyledSkill>
                 </FlexWrapper>
 
@@ -62,7 +62,6 @@ const StyledSkills = styled.section`
     justify-content: center;
     flex-direction: column;
     background-color: ${theme.colors.secondaryBg};
-    gap: 40px;
     padding: 100px 0;
 `
 
@@ -70,6 +69,16 @@ const StyledSkill = styled.div`
     width: 16.666%;
     display: flex;
     justify-content: center;
-    margin-bottom: 60px;
+    align-items: center;
     background: #fff;
+    margin-bottom: 60px;
+
+    @media ${theme.media.tablet} {
+        margin-bottom: 30px;
+        width: 25%;
+        
+    }
+    @media ${theme.media.mobile} {
+        margin-bottom: 0px;    
+    }
 `

@@ -12,7 +12,6 @@ export const Main = () => {
             <Container>
                 <FlexWrapper align={"center"} justify={"center"} gap={"70px"}>
                     <StyledPhoto src={Photo} alt="" />
-
                     <div>
                         <div>
                             <Span1>Hi 👋, I’m a</Span1>
@@ -34,10 +33,26 @@ export const Main = () => {
     );
 };
 
-
-
 const StyledMain = styled.div`
     background-color: ${theme.colors.primeryBg};
+
+    & > div > div {
+        @media ${theme.media.tablet} {
+            flex-direction: column-reverse;
+            gap: 40px;
+
+            img {
+                width: 90%;
+                max-width: 500px;
+            }
+            & > div {
+                width: 100%;
+                max-width: 550px;
+            }
+            
+        }
+
+    }
 `
 
 const StyledPhoto = styled.img`
@@ -48,18 +63,20 @@ object-fit: cover;
 
 const Span1 = styled.span`
 color: #3F396D;
-font-size: 2.5rem;
+font-size: calc( (100vw - 360px)/(1920 - 360) * (45 - 25) + 25px);
 font-weight: 600;
 `
-const Span2 = styled.span`
-color: #9692A1;
-font-size: 1.2rem;
-line-height: 25px;
-`
+
 const MainTitle = styled.h1`
 color: #3F396D;
-font-size: 2.5rem;
+font-size: calc( (100vw - 360px)/(1920 - 360) * (45 - 25) + 25px);
 font-weight: 600;
+`
+
+const Span2 = styled.span`
+color: #9692A1;
+font-size: calc( (100vw - 360px)/(1920 - 360) * (19 - 16) + 16px);
+line-height: 110%;
 `
 
 const Name = styled.h2`
@@ -71,6 +88,7 @@ background-clip: text;
 font-size: 4rem;
 font-weight: 700;
 margin-block-end: 10px;
+font-size: calc( (100vw - 360px)/(1920 - 360) * (64 - 32) + 32px);
 
 `
 

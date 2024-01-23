@@ -53,12 +53,11 @@ const StyledButton = styled.a<ButtonProps>`
     width: ${props => props.w};
     
     transition: background-color 0.3s ease;
-    font-size: 1.05rem;
+    font-size: calc( (100vw - 360px)/(1920 - 360) * (17 - 15) + 15px);
 
     background-color: ${props => props.bg || theme.colors.One};
     color: ${props => props.color || theme.colors.white};
     text-decoration: ${props => props.decoration || "none"};
-
 
     &:hover {
         background: ${props => props.bgHover || theme.colors.Two};

@@ -23,7 +23,7 @@ width: ${props => props.w || "60%"};
 margin: 0 auto;
 padding-bottom: 30px;
 text-align: center;
-font-size: 1.3rem;
+font-size: calc( (100vw - 360px)/(1920 - 360) * (20 - 16) + 16px);
 font-weight: 400;
     
 `
