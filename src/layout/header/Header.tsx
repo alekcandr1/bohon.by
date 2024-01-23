@@ -37,12 +37,12 @@ const StyledHeader = styled.header`
     top: 0;
     left: 0;
     width: 100vw;
+    min-width: 360px;
     z-index: 999;
     height: 94px;
     @media ${theme.media.mobile} {
         padding: 10px 0;
-
-            height: 60px;
+        height: 60px;
         
     }
 

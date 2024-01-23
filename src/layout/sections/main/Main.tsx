@@ -11,7 +11,7 @@ export const Main = () => {
         <StyledMain>
             <Container>
                 <FlexWrapper align={"center"} justify={"center"} gap={"70px"}>
-                    <StyledPhoto src={Photo} alt="" />
+                    <StyledPhoto src={Photo} alt="Front-end developer Alexander Bokhan" />
                     <div>
                         <div>
                             <Span1>Hi 👋, I’m a</Span1>
