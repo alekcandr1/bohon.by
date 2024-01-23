@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 ::placeholder {
-  font-size: 16px;
+  font-size: calc( (100vw - 360px)/(1920 - 360) * (16 - 15) + 15px);
   font-weight: 400;
   line-height: normal;
   font-family: 'Exo 2', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;

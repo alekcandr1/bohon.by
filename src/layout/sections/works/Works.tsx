@@ -66,41 +66,13 @@ const allWorks = [
         ],
         href: 'https://accpi.by'
     },
-    {
-        image: require('./../../../assets/images/pr1.webp'),
-        type: 'Corporate website',
-        name: 'Accounting services',
-        info: [
-            'HTML5, CSS3, JS;',
-            'CSS animation, modal windows;',
-            'Optimization of images, headsets, styles;',
-            'Code validation testing;',
-            'Analytics and goal setting;',
-            'Basic SEO optimization.'
-        ],
-        href: 'https://accpi.by'
-    },
-    {
-        image: require('./../../../assets/images/pr1.webp'),
-        type: 'Corporate website',
-        name: 'Accounting services',
-        info: [
-            'HTML5, CSS3, JS;',
-            'CSS animation, modal windows;',
-            'Optimization of images, headsets, styles;',
-            'Code validation testing;',
-            'Analytics and goal setting;',
-            'Basic SEO optimization.'
-        ],
-        href: 'https://accpi.by'
-    },
 ]
 
 export const Works = () => {
     return (
         <StyledWorks>
             <Container>
-                <SectionTitle Title1="My works" Title2="Projects" colorTitle1="#fff" colorTitle2="#fff" />
+                <SectionTitle Title1="Some of my works" Title2="Projects" colorTitle1="#fff" colorTitle2="#fff" />
                 <Description color="#fff" text="My experience consists of developing more than 30 commercial websites: online stores, one-page websites, corporate websites, information resources."></Description>
                 <Description color="#fff" text="These are often turnkey sites - from prototyping and design, to development, basic SEO and connecting CRM systems."></Description>
 
@@ -137,6 +109,10 @@ const StyledWorks = styled.section`
     background-color: ${theme.colors.white};
     min-height: 80vh;
     padding-top: 100px;
+    @media ${theme.media.mobile} {
+        padding-top: 60px;
+
+    }
 
 &::before {
     content: "";

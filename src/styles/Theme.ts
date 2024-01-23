@@ -27,7 +27,7 @@ export const theme = {
 
     media: {
         tablet: "screen and (max-width: 1020px)",
-        mobile: "screen and (max-width: 576px)",
+        mobile: "screen and (max-width: 675px)",
     }
 
 }

@@ -43,7 +43,9 @@ const StyledWork = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 40px;
+    
 
     width: 49%;
     min-width: 612px;
@@ -53,10 +55,28 @@ const StyledWork = styled.div`
     border-radius: 30px;
     border: 1px solid ${theme.colors.borderLine};
     box-shadow: 0px 0px 80px 0px rgba(167, 154, 197, 0.20);
+
+    @media ${theme.media.tablet} {
+        min-width: 0px;
+        width: 49%;
+        min-width: 612px;
+        flex-direction: row;
+   
+    }
+    @media ${theme.media.mobile} {
+        gap: 20px;
+
+        min-width: 0px;
+        width: fit-content;     
+        flex-direction: column-reverse;
+        min-width: 51%;
+   
+    }
 `
 const ImageWrapper = styled.div`
     position: relative;
     z-index: 1;
+    width: fit-content;
 
     &::before {
         content: "";
@@ -74,6 +94,13 @@ const Image = styled.img`
     max-height: 356px;
     position: relative;
     z-index: 1;
+
+    @media ${theme.media.tablet} {
+        max-height: 300px;
+    }
+    @media ${theme.media.mobile} {
+        max-height: 300px;
+    }
 `
 const Description = styled.div`
     display: flex;
@@ -84,14 +111,14 @@ const Description = styled.div`
 `
 const TypeWork = styled.h3`
     color: ${theme.colors.blueBg};
-    font-size: 1rem;
+    font-size: calc( (100vw - 360px)/(1920 - 360) * (16 - 15) + 15px);
     font-weight: 500;
    
 
 `
 const NameWork = styled.span`
     color: ${theme.colors.darkTitle};
-    font-size: 1.4rem;
+    font-size: calc( (100vw - 360px)/(1920 - 360) * (23 - 20) + 20px);
     font-weight: 700;
    
 
@@ -99,6 +126,11 @@ const NameWork = styled.span`
 
 const UlElementInfoItems = styled.ul`
     padding: 20px 0 20px 10px;
+
+    @media ${theme.media.mobile} {
+        padding: 10px 0 10px 10px;
+
+    }
 `
 
 const InfoItems = styled.li`

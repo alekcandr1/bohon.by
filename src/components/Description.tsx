@@ -20,6 +20,11 @@ const StyledDescription = styled.p<DescriptionPropsType>`
 color: ${props => props.color || theme.colors.text};
 width: ${props => props.w || "60%"};
 
+@media ${theme.media.mobile} {
+    width: ${props => props.w || "90%"};
+
+}
+
 margin: 0 auto;
 padding-bottom: 30px;
 text-align: center;

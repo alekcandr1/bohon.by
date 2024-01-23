@@ -53,8 +53,12 @@ const StyledTestimonials = styled.section`
             display: flex;
         }
 
-
         max-width: 700px;
+
+    }
+    @media ${theme.media.tablet} {
+        
+        padding: 50px 0;
 
     }
 
@@ -67,11 +71,17 @@ const Image = styled.img`
 
 `
 const ContentTestimonials = styled.div`
-    min-width: 550px;
+    min-width: 0px;
 
     @media ${theme.media.tablet} {
-        img {
+        & > img {
             margin-bottom: 30px;
+        }
+    }
+    @media ${theme.media.mobile} {
+        & > img {
+            width: 70%;
+            height: auto;
         }
     }
 
