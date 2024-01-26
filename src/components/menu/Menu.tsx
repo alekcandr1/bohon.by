@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { theme } from "../../styles/Theme";
 
 type MenuPropsType = {
-    menuItems: Array<string>
+    menuItems: Array<{title: string, href: string}>
     line?: boolean
 }
  
@@ -15,7 +15,7 @@ export const Menu = (props: MenuPropsType) => {
                        return <React.Fragment key={index}>
                         <ListItem key={index}>
                             {index > 0 && props.line && <Line />}
-                            <Link href="">{item}</Link>
+                            <Link href={`#${item.href}`}>{item.title}</Link>
                             
                         </ListItem>
                         </React.Fragment>

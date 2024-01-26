@@ -10,7 +10,7 @@ export const Form = () => {
                 <Field type="text" placeholder={"Name"} required />
                 <Field type="phone" placeholder={"Phone"} required />
                 <Message1 placeholder="Message" required></Message1>
-                <Button idForm="myForm" TextButton="Send message" w="100%" />
+                <Button form="myForm" TextButton="Send message" w="100%" type="submit" as="button" />
             </FirstColumn>
             <SecondColumn>
                 <Message2 placeholder="Message"></Message2>

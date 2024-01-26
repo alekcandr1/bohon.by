@@ -29,6 +29,7 @@ margin: 0 auto;
 padding-bottom: 30px;
 text-align: center;
 font-size: calc( (100vw - 360px)/(1920 - 360) * (20 - 16) + 16px);
+font-size: clamp(16px, ( (100vw - 360px)/(1920 - 360) * (20 - 16) + 16px), 20px);
 font-weight: 400;
     
 `

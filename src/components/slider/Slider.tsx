@@ -59,6 +59,8 @@ const Slide = styled.div`
 const TextTestimony = styled.p`
 color: ${theme.colors.gray};
 font-size: calc( (100vw - 360px)/(1920 - 360) * (20 - 16) + 16px);
+font-size: clamp(16px, ( (100vw - 360px)/(1920 - 360) * (20 - 16) + 16px), 20px);
+
 font-weight: 400;
 line-height: 150%;
 
@@ -66,12 +68,15 @@ line-height: 150%;
 const Name = styled.span`
 color: ${theme.colors.darkTitle};
 font-size: calc( (100vw - 360px)/(1920 - 360) * (20 - 18) + 18px);
+font-size: clamp(18px, ( (100vw - 360px)/(1920 - 360) * (20 - 18) + 18px), 20px);
+
 font-weight: 700;
 
 `
 const Post = styled.span`
     color: ${theme.colors.gray};
     font-size: calc( (100vw - 360px)/(1920 - 360) * (17 - 15) + 15px);
+    font-size: clamp(15px, ( (100vw - 360px)/(1920 - 360) * (17 - 15) + 15px), 17px);
 `
 
 

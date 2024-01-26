@@ -14,7 +14,7 @@ import { theme } from "../../../styles/Theme";
 
 export const Testimonials = () => {
     return (
-        <StyledTestimonials>
+        <StyledTestimonials id="testimonials">
             <Container>
                 <FlexWrapper>
                     <Image src={Peoples} alt="" />
@@ -38,7 +38,7 @@ export const Testimonials = () => {
 const StyledTestimonials = styled.section`
     max-width: 1280px;
     margin: auto;
-    padding: 80px 0;
+    padding: 100px 0;
 
         & > div > div:last-child {
             display: none;

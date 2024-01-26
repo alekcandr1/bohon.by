@@ -2,49 +2,55 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../../styles/Theme";
 
-type ButtonProps = {
+type ButtonPropsType = {
     TextButton?: string
     bg?: string
     bgHover?: string
     color?: string
     decoration?: string
-    idForm?: string
     w?: string
+    href?: string | undefined
+    as?: "a" | "button" | null
+    type?: string | undefined
+    form?: string | undefined
 }
 
+export const Button = (props: ButtonPropsType) => {
 
-export const Button = (props: ButtonProps) => {
-
-    return props.idForm ? (
-        <StyledButton
-            as="button"
-            type="submit"
-            bg={props.bg}
-            bgHover={props.bgHover}
-            color={props.color}
-            w={props.w}
-            decoration={props.decoration}>
-
+    if (props.as === "a") {
+        return (
+            <StyledButtonAnchor
+                href={props.href}
+                bg={props.bg}
+                bgHover={props.bgHover}
+                color={props.color}
+                w={props.w}
+                decoration={props.decoration}
+                role={props.as === "a" ? "link" : undefined}
+                aria-label={props.as === "a" ? props.TextButton || "Link" : undefined}
+            >
                 {props.TextButton || "Button"}
-        </StyledButton>
-    ) : (
-        <StyledButton
-            as="a"
-            href="#"
-            w={props.w}
-            bg={props.bg}
-            bgHover={props.bgHover}
-            color={props.color}
-            decoration={props.decoration}>
-
+            </StyledButtonAnchor>
+        )
+    } else if (props.as === "button") {
+        return (
+            <StyledButtonSubmit
+                type={props.type}
+                form={props.form}
+                bg={props.bg}
+                bgHover={props.bgHover}
+                color={props.color}
+                w={props.w}
+                decoration={props.decoration}
+            >
                 {props.TextButton || "Button"}
-        </StyledButton>
-
-    );
+            </StyledButtonSubmit>
+        )
+    }  else null;
 };
 
 
-const StyledButton = styled.a<ButtonProps>`
+const StyledButtonAnchor = styled.a<ButtonPropsType>`
     display: inline-block;
     padding: 16px 40px;
     width: max-content;
@@ -54,6 +60,8 @@ const StyledButton = styled.a<ButtonProps>`
     
     transition: background-color 0.3s ease;
     font-size: calc( (100vw - 360px)/(1920 - 360) * (17 - 15) + 15px);
+    font-size: clamp(15px, ( (100vw - 360px)/(1920 - 360) * (17 - 15) + 15px), 17px);
+
 
     background-color: ${props => props.bg || theme.colors.One};
     color: ${props => props.color || theme.colors.white};

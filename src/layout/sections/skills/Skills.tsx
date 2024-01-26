@@ -9,7 +9,7 @@ import { Description } from "../../../components/Description";
 
 export const Skills = () => {
     return (
-        <StyledSkills>
+        <StyledSkills id="skills">
             <Container>
                 <SectionTitle Title1="What I'm good at" Title2="My skills" />
                 <Description text={"I am proficient in TypeScript, JavaScript, React, React Native, Redux-Toolkit, Material UI and Styled Components."} />

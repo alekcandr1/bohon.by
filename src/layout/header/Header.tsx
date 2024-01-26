@@ -8,7 +8,13 @@ import { FlexWrapper } from "../../components/FlexWrapper";
 import { theme } from "../../styles/Theme";
 import { MobileMenu } from "../../components/menu/MobileMenu";
 
-const headerMenu = ["Home", "Skills", "Projects", "Testimonials", "Contacts"]
+const headerMenu = [
+    { title: 'Home', href: 'home' },
+    { title: 'Skills', href: 'skills' },
+    { title: 'Projects', href: 'projects' },
+    { title: 'Testimonials', href: 'testimonials' },
+    { title: 'Contacts', href: 'contacts' },
+  ];
 
 export const Header = (props: { isMobile?: boolean }) => {
     return (
@@ -18,9 +24,9 @@ export const Header = (props: { isMobile?: boolean }) => {
                     <Logo />
                     <MenuWrapper>
                         <Menu menuItems={headerMenu} />
-                        <MobileMenu menuItems={headerMenu} />
+                        {/* <MobileMenu menuItems={headerMenu} /> */}
                         <ButtonWrapper>
-                            <Button TextButton={"Contact me"} />
+                            <Button TextButton={"Contact me"} href="#contacts" as="a" />
                         </ButtonWrapper>
                     </MenuWrapper>
                 </FlexWrapper>

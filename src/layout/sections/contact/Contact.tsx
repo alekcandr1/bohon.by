@@ -9,7 +9,7 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 
 export const Contact = () => {
     return (
-        <StyledContact>
+        <StyledContact id="contacts">
             <Container>
                 <SectionTitle
                     Title1="Let’s Talk"
@@ -34,7 +34,7 @@ export const Contact = () => {
 const StyledContact = styled.div`
     background-color: ${theme.colors.primeryBg};
     text-align: center;
-    padding: 80px 0;
+    padding: 100px 0;
 
     @media ${theme.media.mobile} {
         padding: 50px 0;    
@@ -49,6 +49,7 @@ const Contacts = styled.div`
     color: ${theme.colors.darkTitle};
     text-align: center;
     font-size: calc( (100vw - 360px)/(1920 - 360) * (20 - 16) + 16px);
+    font-size: clamp(16px, ( (100vw - 360px)/(1920 - 360) * (20 - 16) + 16px), 20px);
 
     @media ${theme.media.mobile} {
         gap: 0px;

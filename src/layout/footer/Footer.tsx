@@ -7,7 +7,13 @@ import { Social } from "../../components/social/Social";
 import { Container } from "../../components/Container";
 import { theme } from "../../styles/Theme";
 
-const headerMenu = ["Home", "Skills", "Projects", "Testimonials", "Contacts"]
+const headerMenu = [
+    { title: 'Home', href: 'home' },
+    { title: 'Skills', href: 'skills' },
+    { title: 'Projects', href: 'projects' },
+    { title: 'Testimonials', href: 'testimonials' },
+    { title: 'Contacts', href: 'contacts' },
+  ];
 
 
 export const Footer = () => {

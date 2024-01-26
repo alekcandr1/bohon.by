@@ -35,6 +35,7 @@ const StyledSectionTitle = styled.div<{ align?: string }>`
 const SectionTitle1 = styled.p<TitlesProps>`
     color: ${props => props.colorTitle1 || theme.colors.Two};
     font-size: calc( (100vw - 360px)/(1920 - 360) * (20 - 16) + 16px);
+    font-size: clamp(16px, calc( (100vw - 360px)/(1920 - 360) * (20 - 16) + 16px), 20px);
     font-weight: 600;
 `
 const SectionTitle2 = styled.h2<TitlesProps>`
@@ -43,6 +44,7 @@ const SectionTitle2 = styled.h2<TitlesProps>`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: calc( (100vw - 360px)/(1920 - 360) * (45 - 25) + 25px);
+    font-size: clamp(25px, ( (100vw - 360px)/(1920 - 360) * (45 - 25) + 25px), 45px);
     font-weight: 700;
     padding: 0 0 7px 0;
 

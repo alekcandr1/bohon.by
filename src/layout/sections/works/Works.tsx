@@ -70,7 +70,7 @@ const allWorks = [
 
 export const Works = () => {
     return (
-        <StyledWorks>
+        <StyledWorks id="projects">
             <Container>
                 <SectionTitle Title1="Some of my works" Title2="Projects" colorTitle1="#fff" colorTitle2="#fff" />
                 <Description color="#fff" text="My experience consists of developing more than 30 commercial websites: online stores, one-page websites, corporate websites, information resources."></Description>
@@ -107,7 +107,6 @@ const StyledWorks = styled.section`
 
     
     background-color: ${theme.colors.white};
-    min-height: 80vh;
     padding-top: 100px;
     @media ${theme.media.mobile} {
         padding-top: 60px;
@@ -118,7 +117,7 @@ const StyledWorks = styled.section`
     content: "";
     position: absolute;
     width: 100%;
-    height: 600px;
+    height: 40%;
     background-color: ${theme.colors.blueBg};
     top: 0;
     left: 0;
