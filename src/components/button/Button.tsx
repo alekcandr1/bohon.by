@@ -9,13 +9,14 @@ type ButtonPropsType = {
     color?: string
     decoration?: string
     w?: string
-    href?: string | undefined
+    href?: string
     as?: "a" | "button" | null
-    type?: string | undefined
-    form?: string | undefined
+    type?: "button" | "reset" | "submit" | undefined
+    form?: string
 }
 
 export const Button = (props: ButtonPropsType) => {
+    
 
     if (props.as === "a") {
         return (
@@ -46,39 +47,45 @@ export const Button = (props: ButtonPropsType) => {
                 {props.TextButton || "Button"}
             </StyledButtonSubmit>
         )
-    }  else null;
+    }  else return null;
 };
 
-
-const StyledButtonAnchor = styled.a<ButtonPropsType>`
+const commonButtonStyles = `
     display: inline-block;
     padding: 16px 40px;
     width: max-content;
     border-radius: 100px;
-
-    width: ${props => props.w};
-    
     transition: background-color 0.3s ease;
     font-size: calc( (100vw - 360px)/(1920 - 360) * (17 - 15) + 15px);
     font-size: clamp(15px, ( (100vw - 360px)/(1920 - 360) * (17 - 15) + 15px), 17px);
+`
 
 
-    background-color: ${props => props.bg || theme.colors.One};
-    color: ${props => props.color || theme.colors.white};
-    text-decoration: ${props => props.decoration || "none"};
+const StyledButtonAnchor = styled.a<ButtonPropsType>`
+    ${commonButtonStyles};
+
+    background-color: ${(props) => props.bg || theme.colors.One};
+    color: ${(props) => props.color || theme.colors.white};
+    text-decoration: ${(props) => props.decoration || "none"};
 
     &:hover {
-        background: ${props => props.bgHover || theme.colors.Two};
+        background: ${(props) => props.bgHover || theme.colors.Two};
         text-decoration: none;
-
     }
-
-    /* &:focus {
-        border:0;
-        outline: none;
-
-    } */
-
 `
+
+const StyledButtonSubmit = styled.button<ButtonPropsType>`
+    ${commonButtonStyles};
+    
+    background-color: ${(props) => props.bg || theme.colors.One};
+    color: ${(props) => props.color || theme.colors.white};
+    text-decoration: ${(props) => props.decoration || "none"};
+
+    &:hover {
+        background: ${(props) => props.bgHover || theme.colors.Two};
+        text-decoration: none;
+    }
+`
+
 
 
