@@ -53,7 +53,6 @@ export const Button = (props: ButtonPropsType) => {
 const commonButtonStyles = `
     display: inline-block;
     padding: 16px 40px;
-    width: max-content;
     border-radius: 100px;
     transition: background-color 0.3s ease;
     font-size: calc( (100vw - 360px)/(1920 - 360) * (17 - 15) + 15px);
@@ -64,6 +63,7 @@ const commonButtonStyles = `
 const StyledButtonAnchor = styled.a<ButtonPropsType>`
     ${commonButtonStyles};
 
+    width: ${(props) => props.w || 'max-content'};
     background-color: ${(props) => props.bg || theme.colors.One};
     color: ${(props) => props.color || theme.colors.white};
     text-decoration: ${(props) => props.decoration || "none"};
@@ -76,7 +76,8 @@ const StyledButtonAnchor = styled.a<ButtonPropsType>`
 
 const StyledButtonSubmit = styled.button<ButtonPropsType>`
     ${commonButtonStyles};
-    
+
+    width: ${(props) => props.w || 'max-content'};  
     background-color: ${(props) => props.bg || theme.colors.One};
     color: ${(props) => props.color || theme.colors.white};
     text-decoration: ${(props) => props.decoration || "none"};

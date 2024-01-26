@@ -6,48 +6,34 @@ import { Button } from "../button/Button";
 export const Form = () => {
     return (
         <StyledForm id="myForm" action="main.php">
-            <FirstColumn>
-                <Field type="text" placeholder={"Name"} required />
-                <Field type="phone" placeholder={"Phone"} required />
-                <Message1 placeholder="Message" required></Message1>
-                <Button form="myForm" TextButton="Send message" w="100%" type="submit" as="button" />
-            </FirstColumn>
-            <SecondColumn>
-                <Message2 placeholder="Message"></Message2>
-            </SecondColumn>
+            <Field type="text" placeholder={"Name"} required />
+            <Field type="phone" placeholder={"Phone"} required />
+            <Message placeholder="Message" required></Message>
+            <StyledButton form="myForm" TextButton="Send message" w="49%" type="submit" as="button" />
         </StyledForm>
     );
 };
 
 const StyledForm = styled.form`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin: auto;
     width: 100%;
     max-width: 970px;
     gap: 20px;
+    height: 200px;
 
-    
-`
-const FirstColumn = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    gap: 20px;
     @media ${theme.media.mobile} {
-        width: 100%;
-    }
+        height: 100%;
 
-    
-`
-const SecondColumn = styled.div`
-    width: 60%;
-    @media ${theme.media.mobile} {
-        display: none;
     }
-
-    
 `
+
+const StyledButton = styled(Button)`
+    order: 4;
+`
+
 const Field = styled.input`
     border-radius: 30px;
     border: none;
@@ -61,11 +47,19 @@ const Field = styled.input`
     font-size: 1rem;
     box-shadow: 0px 0px 40px 0px rgba(112, 52, 254, 0.10);
     
+
+    width: 49%;
+    @media ${theme.media.mobile} {
+        width: 100%;
+    }
+
+    
 `
-const Message1 = styled.textarea`
-    display: none;
+const Message = styled.textarea`
+    display: block;
+    order: 4;
     height: 200px;
-    width: 100%;
+    width: 49%;
 
     box-shadow: 0px 0px 40px 0px rgba(112, 52, 254, 0.10);
     border-radius: 30px;
@@ -75,18 +69,7 @@ const Message1 = styled.textarea`
     resize: none;
 
     @media ${theme.media.mobile} {
-        display: block;
+        order: 3;
+        width: 100%;
     }
-`
-
-const Message2 = styled.textarea`
-    height: 100%;
-    width: 100%;
-
-    box-shadow: 0px 0px 40px 0px rgba(112, 52, 254, 0.10);
-    border-radius: 30px;
-    background: ${theme.colors.white};
-    padding: 18px 30px;
-    border: 0;
-    resize: none;
 `
