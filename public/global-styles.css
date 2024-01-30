@@ -34,6 +34,11 @@ h2 {
  
 }
 
+* {
+    scrollbar-color: #555555 #F1F4FF;
+    scrollbar-width: thin;
+}
+
 /* make sure to set some focus styles for accessibility */
 :focus {
     outline: 0;
