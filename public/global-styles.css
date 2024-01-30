@@ -22,6 +22,18 @@ h2 {
     font-size: 25px;
 }
 
+*::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F1F4FF;
+
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #555555;
+    border-radius: 10px;
+    border: 2px solid #F1F4FF;
+ 
+}
+
 /* make sure to set some focus styles for accessibility */
 :focus {
     outline: 0;

@@ -9,7 +9,7 @@ export const Form = () => {
             <Field type="text" placeholder={"Name"} required />
             <Field type="phone" placeholder={"Phone"} required />
             <Message placeholder="Message" required></Message>
-            <StyledButton form="myForm" TextButton="Send message" w="49%" type="submit" as="button" />
+            {/* <StyledButton form="myForm" TextButton="Send message" w="49%" type="submit" as="button" /> */}
         </StyledForm>
     );
 };
